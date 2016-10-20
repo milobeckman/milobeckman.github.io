@@ -1,0 +1,134 @@
+/* LAYOUT FORMATTING */
+
+body {
+    margin: 0px;
+    padding: 0px;
+    
+    font-family: "Avenir";
+    
+    --banner-height: 80px;
+    --sidebar-width: 170px;
+    --padding: 20px;
+    
+    /* colors */
+    --background-col: rgb(250,250,250);
+    --border-col: rgb(160,210,244);
+    --banner-background-col: rgb(249, 252, 255);
+    --banner-text-col: rgb(160,210,244);
+    --banner-text-hover-col: rgb(165,215,249);
+    --link-col: rgb(51,102,187);
+    --clicked-link-col: rgb(51,102,187);
+    
+    background-color: var(--light-gray);
+}
+
+.banner {
+    background-color: var(--banner-background-col);
+    color: var(--banner-text-col);
+    font-weight: bold;
+    font-size: 40px;
+    
+    height: var(--banner-height);
+    line-height: var(--banner-height);
+    padding: 0px 0px 0px calc(var(--sidebar-width) + var(--padding));
+    
+    border-bottom: 1px solid var(--border-col);
+}
+
+.main {
+    background-color: var(--background-col);
+    display: flex;
+}
+
+.sidebar {
+    align-items: stretch;
+    width: var(--sidebar-width);
+    min-height: calc(100vh - var(--banner-height));
+}
+
+
+/* CONTENT FORMATTING */
+
+.content {
+    width: calc(100vw - var(--sidebar-width));
+    
+    --content-font-stack: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
+}
+
+.content_slice {
+    width: calc(100vw - var(--sidebar-width) - 2*var(--padding));
+    padding: var(--padding) var(--padding) 0px;
+}
+
+.content_block {
+    width: calc(100vw - var(--sidebar-width) - 4*var(--padding));
+    padding: var(--padding);
+    
+    border: 1px solid var(--border-col);
+    border-radius: 3px;
+    
+    background: white;
+}
+
+.content_title {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.content_undertitle {
+    font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
+    font-size: 11px;
+}
+
+.content_main {
+    font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.content_continue {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* link formatting */
+.content_main a,
+.content_main a:link,
+.content_continue a,
+.content_continue a:link {
+    color: var(--link-col);
+    text-decoration: none;
+}
+
+.content_main a:hover,
+.content_continue a:hover {
+    text-decoration: underline;
+}
+
+.content_main a:visited,
+.content_continue a:visited {
+    color: var(--clicked-link-col);
+}
+
+.content_title a,
+.content_title a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.content_title a:hover {
+    text-decoration: underline;
+}
+
+
+.banner a,
+.banner a:link,
+.banner a:visited {
+    color: var(--banner-text-col);
+    text-decoration: none;
+}
+
+.banner a:hover {
+    color: var(--banner-text-hover-col);
+    text-decoration: none;
+}

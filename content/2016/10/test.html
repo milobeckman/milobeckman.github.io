@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+    
+    <p id="demo"></p>
+    
+    
+    <!-- this isn't working because it needs to be loaded from an http -->
+    
+    <script>
+        console.log("Hey");
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readystate == 4 && this.status == 200) {
+                loadFromXML(this);
+            }
+        };
+        
+        xmlhttp.open("GET", "test.xml", true);
+        xmlhttp.send();
+        
+        function loadFromXML(xml) {
+            var xmlDoc = xml.responseXML;
+            var title = xmlDoc.getElementById("title");
+            
+            document.getElementById("demo").innerHTML = title;
+        }
+    </script>
+    
+    
+    
+    
+    <!-- template coming soon 
+    <head>
+        <title>milobeckman.com</title>
+        
+        <link href="../../../stylesheets/default.css" rel="stylesheet" />
+    </head>
+    
+    <script>
+        
+    </script>
+    
+    <body>
+        <div class="banner">
+            <a href="../../../index.html" class="banner_link">milobeckman.com</a>  
+        </div>
+        
+        <div class="main">
+            
+            <div class="sidebar">
+                sidebar!<br><br>sidebaresidebare<br><br><br><br><br><br>it's a sidebar kinda day today<br><br>sidebar<br><br>more
+            </div>
+            
+            <div class="content">
+                <div class="content_slice">
+                    <div class="content_block">
+                        Hey guys!!
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body> -->
+    
+</html>
