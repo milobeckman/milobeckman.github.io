@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+
+<title>A new post</title>
+
+<datestring>at 5:11pm on Oct 25, 2016</datestring>
+
+<tags>
+    <tag>
+        <internal>tag1</internal>
+        <display>display tag</display>
+    </tag>
+    <tag>
+        <internal>tag2</internal>
+        <display>display tag</display>
+    </tag>
+</tags>
+
+<text>
+testing add_post.py
+</text>
