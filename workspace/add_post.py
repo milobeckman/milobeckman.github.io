@@ -37,7 +37,7 @@ class Post:
         self.month = str(args.month if args.month else now.month)
         
         # save tags as list
-        self.tags = args.tags.split(",")
+        self.tags = [x.strip() for x in args.tags.split(",")]
         
         # save content filename (sans txt)
         self.filename = args.filename[:-4]
@@ -97,8 +97,14 @@ class Post:
         template = open(template_filename, "r")
         html_str = template.read()
         
+        # insert text
+        txt_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
+        txt = open(txt_filename, "r")
+        text = txt.read()
+        html_str = html_str.replace("[[TEXT]]", text)
+        
         # replace placeholders with content
-        html_str = html_str.replace("[[STYLESHEET]]", stylesheet)
+        html_str = html_str.replace("[[STYLESHEET]]", home_dir_online + "/style/" + stylesheet)
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
@@ -111,11 +117,6 @@ class Post:
         for tag in self.tags:
             tags += "<a href=" + home_dir_online + "/tags/" + tag + ".html>" + display_tag(tag) + "</a>, "
         html_str = html_str.replace("[[TAGS]]", tags[:-2])
-        
-        txt_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
-        txt = open(txt_filename, "r")
-        text = txt.read()
-        html_str = html_str.replace("[[TEXT]]", text)
         
         # write to html file
         html.write(html_str)
