@@ -95,18 +95,22 @@ body {
 .content_main a,
 .content_main a:link,
 .content_continue a,
-.content_continue a:link {
+.content_continue a:link,
+.content_undertitle a,
+.content_undertitle a:link {
     color: var(--link-col);
     text-decoration: none;
 }
 
 .content_main a:hover,
-.content_continue a:hover {
+.content_continue a:hover,
+.content_undertitle a:hover {
     text-decoration: underline;
 }
 
 .content_main a:visited,
-.content_continue a:visited {
+.content_continue a:visited,
+.content_undertitle a:visited {
     color: var(--clicked-link-col);
 }
 

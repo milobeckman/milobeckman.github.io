@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<title>Post title from XML</title>
+
+<datetime>1476986372</datetime>
+
+<tags>
+    <tag>
+        <display>visualizations</display>
+        <link>visualizations</link>
+    </tag>
+    
+    <tag>
+        <display>occam's razor</display>
+        <link>occams-razor</link>
+    </tag>
+</tags>
+
+<text>
+     
+</text>
