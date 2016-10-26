@@ -8,7 +8,7 @@ now = datetime.datetime.now()
 
 template_post = "template-post.html"
 template_tags = "template-tags.html"
-stylesheet = "default.css"
+stylesheet = "../../../style/default.css"
 
 # filepaths
 home_dir_local = "/users/milo/Desktop/Dropbox/Code/milobeckman"
@@ -104,7 +104,7 @@ class Post:
         html_str = html_str.replace("[[TEXT]]", text)
         
         # replace placeholders with content
-        html_str = html_str.replace("[[STYLESHEET]]", home_dir_online + "/style/" + stylesheet)
+        html_str = html_str.replace("[[STYLESHEET]]", stylesheet)
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
