@@ -63,7 +63,7 @@ body {
 
 .content_block {
     width: calc(100vw - var(--sidebar-width) - 4*var(--padding));
-    padding: var(--padding) var(--padding) 0px var(--padding);
+    padding: var(--padding);
     
     border: 1px solid var(--border-col);
     border-radius: 3px;
