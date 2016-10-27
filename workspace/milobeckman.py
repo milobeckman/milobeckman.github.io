@@ -5,17 +5,20 @@ import os
 
 now = datetime.datetime.now()
 
-template_post = "post_default.html"
-template_tags = "tags_default.html"
-
-# filepaths
+# filepath roots
 home_dir_local = "/users/milo/Desktop/Dropbox/Code/milobeckman"
 home_dir_online = "http://milobeckman.github.io"
 
-# special files
-stylesheet_local = "../style/default.css"               # relative to workspace dir
-stylesheet_online = "../../../style/default.css"        # relative to content subsubdir
-display_tag_lookup = "/lookups/display_tag_lookup.xml"  # appended to home_dir_local
+# filepaths referenced inside html code
+stylesheet_from_preview = "../style/default.css"
+stylesheet_from_live = "../../../style/default.css"
+stylesheet_from_tag = "../style/default.css"
+
+# filepaths referenced inside python code (all relative to home_dir_local)
+display_tag_lookup = "/lookups/display_tag_lookup.xml"
+template_post = "/style/post_default.html"
+template_tag = "/style/tag_default.html"
+template_tag_slice = "/style/tag_slice_default.html"
 
 
 class Post:
@@ -114,17 +117,17 @@ class Post:
         if preview:
             html_filename = self.filename + ".html"
             txt_filename = self.filename + ".txt"
-            stylesheet = stylesheet_local
+            stylesheet = stylesheet_from_preview
         else:
             html_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".html"
             txt_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
-            stylesheet = stylesheet_online
+            stylesheet = stylesheet_from_live
         
         # open a new html file for writing
         html = open(html_filename, "w+")
         
         # read template html into string
-        template_filename = home_dir_local + "/style/" + template_post
+        template_filename = home_dir_local + template_post
         template = open(template_filename, "r")
         html_str = template.read()
         
@@ -206,6 +209,35 @@ class Post:
         # make tree and write to xml file
         tree = ET.ElementTree(info)
         tree.write(xml_filename)
+    
+    
+    # return an html code block to be inserted into a tag page
+    def preview_block(self):
+        
+        # read template html into string
+        template_filename = home_dir_local + template_tag_slice
+        template = open(template_filename, "r")
+        html_str = template.read()
+        
+        # insert text
+        txt = open(self.content_dir_local + "/" + self.filename + ".txt", "r")
+        text = txt.read()
+        html_str = html_str.replace("[[TEXT]]", text)
+        
+        # replace placeholders with content
+        permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
+        html_str = html_str.replace("[[PERMALINK]]", permalink)
+        
+        html_str = html_str.replace("[[TITLE]]", self.title)
+        html_str = html_str.replace("[[DATESTRING]]", self.datestring)
+        
+        tags = ""
+        for tag in self.tags:
+            tags += "<a href=" + home_dir_online + "/tags/" + tag + ".html>" + display_tag(tag) + "</a>, "
+        html_str = html_str.replace("[[TAGS]]", tags[:-2])
+        
+        # return the html string
+        return html_str
 
 
 # use /tags/display_tag_lookup.xml to return the appropriate display tag
@@ -247,6 +279,45 @@ def add_tag(tag):
     return disp
 
 
+# rewrite this tag's html page to include all tagged posts, or create it if it doesn't exist
+def update_tag_page(tag):
+    
+    # delete the existing tag page if it exists
+    html_filename = home_dir_local + "/tags/" + tag + ".html"
+    rm_if_exists(html_filename)
+    
+    # read template html into string
+    template_filename = home_dir_local + template_tag
+    template = open(template_filename, "r")
+    html_str = template.read()
+    
+    # replace placeholders with content
+    html_str = html_str.replace("[[STYLESHEET]]", stylesheet_from_tag)
+    html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
+    html_str = html_str.replace("[[YEAR]]", str(now.year))
+    html_str = html_str.replace("[[DISPLAY]]", display_tag(tag))
+    
+    # generate and sub in the list of results
+    results_str = ""
+    
+    xml_filename = home_dir_local + "/tags/" + tag + ".xml"
+    tree = ET.parse(xml_filename)
+    info = tree.getroot()
+    
+    for child in info:
+        post = Post()
+        post.populate_from_xml(xml_path(child.text))
+        
+        results_str += post.preview_block()
+    
+    html_str = html_str.replace("[[RESULTS]]", results_str)
+    
+    # write to file
+    html = open(html_filename, "w+")
+    html.write(html_str)
+    
+
+
 # returns a path to the xml file for this internal post name
 def xml_path(filename):
     
@@ -260,6 +331,7 @@ def xml_path(filename):
             return child.text
     
     # if not found, return False
+    print "COULD NOT FIND: " + filename
     return False
 
 
