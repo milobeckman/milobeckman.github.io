@@ -340,7 +340,6 @@ def xml_path(filename):
             return child.text
     
     # if not found, return False
-    print "COULD NOT FIND: " + filename
     return False
 
 

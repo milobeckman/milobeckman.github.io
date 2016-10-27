@@ -31,6 +31,10 @@ def main():
     post = Post()
     post.populate_from_args(args)
     
+    if not os.path.isfile(post.filename + ".txt"):
+        print "ERROR ADDING POST: no txt file found."
+        return
+    
     # sweep previous previews, then write html and xml in the workspace directory
     post.sweep(os.getcwd())
     post.write_html(os.getcwd(), True)
