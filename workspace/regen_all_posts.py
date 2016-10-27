@@ -1,5 +1,6 @@
 from milobeckman import Post
 from milobeckman import xml_path
+from milobeckman import update_tag_page
 import argparse
 import xml.etree.cElementTree as ET
 import os
@@ -47,6 +48,15 @@ def main():
     # iterate through provided xml, regen each post
     for child in info:
         regen_post(child.text)
+    
+    # open the tag list xml
+    tree = ET.parse("../lookups/display_tag_lookup.xml")
+    info = tree.getroot()
+    
+    # iterate through tags, regen each tag page
+    for child in info:
+        update_tag_page(child.attrib["internal"])
+    
     
 
 if __name__ == '__main__':

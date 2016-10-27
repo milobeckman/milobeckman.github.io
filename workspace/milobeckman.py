@@ -14,6 +14,11 @@ stylesheet_from_preview = "../style/default.css"
 stylesheet_from_live = "../../../style/default.css"
 stylesheet_from_tag = "../style/default.css"
 
+favicon_from_preview = "../style/favicon.png"
+favicon_from_live = "../../../style/favicon.png"
+favicon_from_tag = "../style/favicon.png"
+
+
 # filepaths referenced inside python code (all relative to home_dir_local)
 display_tag_lookup = "/lookups/display_tag_lookup.xml"
 template_post = "/style/post_default.html"
@@ -118,10 +123,12 @@ class Post:
             html_filename = self.filename + ".html"
             txt_filename = self.filename + ".txt"
             stylesheet = stylesheet_from_preview
+            favicon = favicon_from_preview
         else:
             html_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".html"
             txt_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
             stylesheet = stylesheet_from_live
+            favicon = favicon_from_live
         
         # open a new html file for writing
         html = open(html_filename, "w+")
@@ -138,6 +145,7 @@ class Post:
         
         # replace placeholders with content
         html_str = html_str.replace("[[STYLESHEET]]", stylesheet)
+        html_str = html_str.replace("[[FAVICON]]", favicon)
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
@@ -293,6 +301,7 @@ def update_tag_page(tag):
     
     # replace placeholders with content
     html_str = html_str.replace("[[STYLESHEET]]", stylesheet_from_tag)
+    html_str = html_str.replace("[[FAVICON]]", favicon_from_tag)
     html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
     html_str = html_str.replace("[[YEAR]]", str(now.year))
     html_str = html_str.replace("[[DISPLAY]]", display_tag(tag))

@@ -24,15 +24,12 @@ def main():
     post = Post()
     post.populate_from_xml(args.filename + ".xml")
     
-    ### move stuff back to here
-        ### stuff to move back to there
     # move the three files to the appropriate content directory
     post.move_to_content_dir()
     
     # sweep preview html, gen web-ready html
     post.sweep(os.getcwd())
     post.write_html(post.content_dir_local)
-    ### end of stuff
     
     # make sure no post exists with this name (filename must be unique!)
     
