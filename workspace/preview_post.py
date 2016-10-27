@@ -7,7 +7,7 @@ import os
 def parse_args():
     parser = argparse.ArgumentParser("Preview a new post.")
     
-    parser.add_argument("filename", metavar='F', type=str, help="Plaintext file containing the post's content.")
+    parser.add_argument("filename", metavar='F', type=str, help="Internal referent for this post (plaintext filename without extension).")
     parser.add_argument("title", metavar='T', type=str, help="Display title for post.")
     parser.add_argument("tags", metavar='t', type=str, help="Comma-separated list of tags for this post (internal format).")
     parser.add_argument("--datestring", metavar="S", type=str, help="Optionally override the date string.")

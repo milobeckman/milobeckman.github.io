@@ -12,9 +12,10 @@ template_tags = "tags_default.html"
 home_dir_local = "/users/milo/Desktop/Dropbox/Code/milobeckman"
 home_dir_online = "http://milobeckman.github.io"
 
-# stylesheets
+# special files
 stylesheet_local = "../style/default.css"               # relative to workspace dir
 stylesheet_online = "../../../style/default.css"        # relative to content subsubdir
+display_tag_lookup = "/lookups/display_tag_lookup.xml"  # appended to home_dir_local
 
 
 class Post:
@@ -36,7 +37,7 @@ class Post:
         else:
             self.datestring = "at " + str((now.hour-1) % 12 + 1) + ":"
             self.datestring += str(now.minute) if now.minute > 9 else "0" + str(now.minute)
-            self.datestring += "am" if now.hour < 12 else "pm"
+            self.datestring += " AM" if now.hour < 12 else " PM"
             self.datestring += " on " + calendar.month_abbr[now.month] + " " + str(now.day) + ", " + str(now.year)
         
         # save year and month
@@ -46,11 +47,12 @@ class Post:
         # save tags as list
         self.tags = [x.strip() for x in args.tags.split(",")]
         
-        # save content filename (sans txt)
-        self.filename = args.filename[:-4]
+        # save content filename
+        self.filename = args.filename
         
         # save the relative content filepath
         self.content_dir_rel = "/content/" + self.year + "/" + self.month
+        self.content_dir_local = home_dir_local + self.content_dir_rel
         
         # this Post is now populated
         self.populated = True
@@ -73,20 +75,10 @@ class Post:
         
         # save the relative content filepath
         self.content_dir_rel = "/content/" + self.year + "/" + self.month
+        self.content_dir_local = home_dir_local + self.content_dir_rel
         
         # this Post is now populated
         self.populated = True
-    
-    
-    # move this post's txt file to the appropriate content subdir
-    def move_txt_to_content(self):
-        if not os.path.exists(home_dir_local + self.content_dir_rel):
-            os.makedirs(home_dir_local + self.content_dir_rel)
-        
-        old_path = home_dir_local + "/workspace/" + self.filename + ".txt"
-        new_path = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
-        
-        os.rename(old_path, new_path)
     
     
     # write an xml file with metadata on this post using ElementTree
@@ -160,16 +152,116 @@ class Post:
         # write to html file
         html.write(html_str)
     
-    # erase preview html from provided directory
+    
+    # erase generated content from provided directory
     def sweep(self, dir_path):
         rm_if_exists(dir_path + "/" + self.filename + ".html")
         rm_if_exists(dir_path + "/" + self.filename + ".xml")
     
     
+    # move files for this post to the appropriate content directory
+    def move_to_content_dir(self):
+        
+        # gen filepaths for workspace and content directories
+        workspace_dir = home_dir_local + "/workspace"
+        content_dir = home_dir_local + self.content_dir_rel
+        
+        # create content directory if it doesn't exist
+        if not os.path.exists(home_dir_local + self.content_dir_rel):
+            os.makedirs(home_dir_local + self.content_dir_rel)
+        
+        # move txt and xml files to content directory (html is preview and will be swept)
+        for suffix in [".txt", ".xml"]:
+            old_path = workspace_dir + "/" + self.filename + suffix
+            new_path = content_dir + "/" + self.filename + suffix
+            os.rename(old_path, new_path)
+        
+        # store the xml path in xml_path_lookup
+        tree = ET.parse(home_dir_local + "/lookups/xml_path_lookup.xml")
+        info = tree.getroot()
+        new_node = ET.SubElement(info, "post")
+        new_node.attrib["filename"] = self.filename
+        new_node.text = self.content_dir_local + "/" + self.filename + ".xml"
+        tree = ET.ElementTree(info)
+        tree.write(home_dir_local + "/lookups/xml_path_lookup.xml")
     
-# TEMPORARY
+    
+    # add ref to this post in the provided tag list
+    def add_to_list(self, tag):
+        
+        # create the tag list xml if it doesn't exist
+        xml_filename = home_dir_local + "/tags/" + tag + ".xml"
+        if not os.path.isfile(xml_filename):
+            f = open(xml_filename, 'a')
+            f.write("<info></info>")
+            f.close()
+        
+        # open the tag list xml
+        tree = ET.parse(xml_filename)
+        info = tree.getroot()
+        
+        # add this new post
+        ET.SubElement(info, "post").text = self.filename
+        
+        # make tree and write to xml file
+        tree = ET.ElementTree(info)
+        tree.write(xml_filename)
+
+
+# use /tags/display_tag_lookup.xml to return the appropriate display tag
 def display_tag(tag):
-    return "display tag"
+    
+    # open display tag lookup as ET
+    tree = ET.parse(home_dir_local + "/lookups/display_tag_lookup.xml")
+    info = tree.getroot()
+    
+    # go through the tags until you find this one
+    for child in info:
+        if child.attrib["internal"] == tag:
+            return child.text
+    
+    # if not found, ask user to add tag
+    return add_tag(tag)
+
+
+# ask user to input display tag, then store in /lookups/display_tag_lookup.xml
+def add_tag(tag):
+    
+    # ask user for input
+    disp = raw_input("Input a display version for " + tag + ": ")
+    
+    # open the tag lookup file
+    tree = ET.parse(home_dir_local + display_tag_lookup)
+    info = tree.getroot()
+    
+    # add this new tag
+    new_node = ET.SubElement(info, "tag")
+    new_node.attrib["internal"] = tag
+    new_node.text = disp
+    
+    # save the tag lookup file
+    tree = ET.ElementTree(info)
+    tree.write(home_dir_local + display_tag_lookup)
+    
+    # return the inputted display tag
+    return disp
+
+
+# returns a path to the xml file for this internal post name
+def xml_path(filename):
+    
+    # open xml path lookup as ET
+    tree = ET.parse(home_dir_local + "/lookups/xml_path_lookup.xml")
+    info = tree.getroot()
+    
+    # go through the tags until you find this one
+    for child in info:
+        if child.attrib["filename"] == filename:
+            return child.text
+    
+    # if not found, return False
+    return False
+
 
 # remove the specified file if it exists
 def rm_if_exists(filepath):

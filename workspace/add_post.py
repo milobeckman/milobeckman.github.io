@@ -1,4 +1,4 @@
-import milobeckman
+from milobeckman import Post
 import argparse
 import os
 
@@ -7,46 +7,36 @@ import os
 def parse_args():
     parser = argparse.ArgumentParser("Fully integrate a new post.")
     
-    parser.add_argument("filename", metavar='F', type=str, help="Plaintext file containing the post's content.")
+    parser.add_argument("filename", metavar='F', type=str, help="Internal referent for this post (plaintext filename without extension).")
     
     args = argparse.Namespace()
     parser.parse_args(namespace=args)
     return args
 
-# move files for this post to the appropriate content directory
-def move_to_content_dir(post):
-    
-    # gen filepaths for workspace and content directories
-    workspace_dir = milobeckman.home_dir_local + "/workspace"
-    content_dir = milobeckman.home_dir_local + post.content_dir_rel
-    
-    # create content directory if it doesn't exist
-    if not os.path.exists(milobeckman.home_dir_local + post.content_dir_rel):
-        os.makedirs(milobeckman.home_dir_local + post.content_dir_rel)
-    
-    # move txt and xml files to content directory (html is preview and will be swept)
-    for suffix in [".txt", ".xml"]:
-        old_path = workspace_dir + "/" + post.filename + suffix
-        new_path = content_dir + "/" + post.filename + suffix
-        
-        os.rename(old_path, new_path)
-
 
 def main():
+    
     # read arguments from command line
     args = parse_args()
     
     # create a Post object for this post
-    post = milobeckman.Post()
-    post.populate_from_xml(args.filename[:-3] + "xml")
+    post = Post()
+    post.populate_from_xml(args.filename + ".xml")
     
+    ### move stuff back to here
+    
+    # add reference to this post in appropriate tag/all xmls
+    post.add_to_list("all")
+    
+    ### stuff to move back to there
     # move the three files to the appropriate content directory
-    move_to_content_dir(post)
+    post.move_to_content_dir()
     
     # sweep preview html, gen web-ready html
     post.sweep(os.getcwd())
-    post.write_html(milobeckman.home_dir_local + post.content_dir_rel)
-
+    post.write_html(post.content_dir_local)
+    ### end of stuff
+    
 
 if __name__ == '__main__':
     main()
