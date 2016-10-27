@@ -5,7 +5,7 @@ import os
 
 # read arguments from command line
 def parse_args():
-    parser = argparse.ArgumentParser("Integrate a new post into milobeckman.com")
+    parser = argparse.ArgumentParser("Preview a new post.")
     
     parser.add_argument("filename", metavar='F', type=str, help="Plaintext file containing the post's content.")
     parser.add_argument("title", metavar='T', type=str, help="Display title for post.")
@@ -31,9 +31,10 @@ def main():
     post = Post()
     post.populate_from_args(args)
     
-    # sweep, then write a preview html post in the workspace directory
+    # sweep previous previews, then write html and xml in the workspace directory
     post.sweep(os.getcwd())
     post.write_html(os.getcwd(), True)
+    post.write_xml(os.getcwd())
 
     
 

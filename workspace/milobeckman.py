@@ -23,6 +23,7 @@ class Post:
     def __init__(self):
         self.populated = False
     
+    
     # populate this Post object with info from command line arguments
     def populate_from_args(self, args):
         
@@ -54,6 +55,29 @@ class Post:
         # this Post is now populated
         self.populated = True
     
+    
+    # populate this Post object with info from an xml file
+    def populate_from_xml(self, xml_path):
+        
+        # open the xml file as an ET
+        tree = ET.parse(xml_path)
+        info = tree.getroot()
+        
+        # save info from xml
+        self.title = info.find("title").text
+        self.datestring = info.find("datestring").text
+        self.year = info.find("year").text
+        self.month = info.find("month").text
+        self.tags = [x.find("internal").text for x in info.find("tags").findall("tag")]
+        self.filename = info.find("filename").text
+        
+        # save the relative content filepath
+        self.content_dir_rel = "/content/" + self.year + "/" + self.month
+        
+        # this Post is now populated
+        self.populated = True
+    
+    
     # move this post's txt file to the appropriate content subdir
     def move_txt_to_content(self):
         if not os.path.exists(home_dir_local + self.content_dir_rel):
@@ -61,9 +85,6 @@ class Post:
         
         old_path = home_dir_local + "/workspace/" + self.filename + ".txt"
         new_path = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
-        
-        print old_path
-        print new_path
         
         os.rename(old_path, new_path)
     
@@ -81,14 +102,15 @@ class Post:
         # write tags
         tags = ET.SubElement(info, "tags")
         for tag in self.tags:
-            ET.SubElement(tags, "internal").text = tag
-            ET.SubElement(tags, "display").text = display_tag(tag)
+            tag_elt = ET.SubElement(tags, "tag")
+            ET.SubElement(tag_elt, "internal").text = tag
+            ET.SubElement(tag_elt, "display").text = display_tag(tag)
         
         # write content filename
         ET.SubElement(info, "filename").text = self.filename
         
         # make tree and write to xml file
-        xml_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".xml"
+        xml_filename = dir_path + "/" + self.filename + ".xml"
         tree = ET.ElementTree(info)
         tree.write(xml_filename)
     
@@ -140,13 +162,19 @@ class Post:
     
     # erase preview html from provided directory
     def sweep(self, dir_path):
-        try:
-            os.remove(dir_path + "/" + self.filename + ".html")
-        except OSError:
-            pass
+        rm_if_exists(dir_path + "/" + self.filename + ".html")
+        rm_if_exists(dir_path + "/" + self.filename + ".xml")
+    
+    
     
 # TEMPORARY
 def display_tag(tag):
     return "display tag"
-    
+
+# remove the specified file if it exists
+def rm_if_exists(filepath):
+    try:
+        os.remove(filepath)
+    except OSError:
+        pass
     
