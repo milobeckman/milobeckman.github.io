@@ -16,6 +16,7 @@ body {
     --banner-background-col: rgb(249, 252, 255);
     --banner-text-col: rgb(160,210,244);
     --banner-text-hover-col: rgb(165,215,249);
+    --copyright-text-col: rgb(180,180,180);
     --link-col: rgb(51,102,187);
     --clicked-link-col: rgb(51,102,187);
     
@@ -62,7 +63,7 @@ body {
 
 .content_block {
     width: calc(100vw - var(--sidebar-width) - 4*var(--padding));
-    padding: var(--padding);
+    padding: var(--padding) var(--padding) 0px var(--padding);
     
     border: 1px solid var(--border-col);
     border-radius: 3px;
@@ -89,6 +90,13 @@ body {
 .content_continue {
     font-weight: bold;
     text-align: right;
+}
+
+.copyright {
+    font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
+    font-size: 10px;
+    color: var(--copyright-text-col);
+    padding: 3px 0px 0px calc(var(--padding) + 5px);
 }
 
 /* link formatting */
