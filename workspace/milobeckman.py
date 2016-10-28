@@ -25,6 +25,7 @@ template_post = "/style/post.html"
 template_tag = "/style/tag.html"
 template_tag_slice = "/style/tag_slice.html"
 template_next_page = "/style/next_page.html"
+template_end_of_results = "/style/end_of_results.html"
 
 
 class Post:
@@ -340,12 +341,13 @@ def update_tag_page(tag):
         
         # add a next button if there are more results
         if len(results) > 0:
-            next_button = open(home_dir_local + template_next_page).read()
+            next_page = open(home_dir_local + template_next_page).read()
             link = home_dir_online + "/tags/" + tag + "_" + str(page_no + 1) + ".html"
-            html_str = html_str.replace("[[NEXT]]", next_button)
-            html_str = html_str.replace("[[LINK]]", link)
+            next_page = next_page.replace("[[LINK]]", link)
         else:
-            html_str = html_str.replace("[[NEXT]]", "")
+            print "END"
+            next_page = open(home_dir_local + template_end_of_results).read()
+        html_str = html_str.replace("[[NEXT]]", next_page)
         
         # write to file
         html_filename = home_dir_local + "/tags/" + tag + (("_" + str(page_no)) if page_no > 0 else "") + ".html"
