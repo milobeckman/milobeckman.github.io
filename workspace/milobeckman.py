@@ -21,9 +21,10 @@ favicon_from_tag = "../style/favicon.png"
 
 # filepaths referenced inside python code (all relative to home_dir_local)
 display_tag_lookup = "/lookups/display_tag_lookup.xml"
-template_post = "/style/post_default.html"
-template_tag = "/style/tag_default.html"
-template_tag_slice = "/style/tag_slice_default.html"
+template_post = "/style/post.html"
+template_tag = "/style/tag.html"
+template_tag_slice = "/style/tag_slice.html"
+template_next_page = "/style/next_page.html"
 
 
 class Post:
@@ -290,40 +291,70 @@ def add_tag(tag):
 # rewrite this tag's html page to include all tagged posts, or create it if it doesn't exist
 def update_tag_page(tag):
     
-    # delete the existing tag page if it exists
-    html_filename = home_dir_local + "/tags/" + tag + ".html"
-    rm_if_exists(html_filename)
-    
-    # read template html into string
+    # open template html for reading into strings
     template_filename = home_dir_local + template_tag
     template = open(template_filename, "r")
-    html_str = template.read()
+    template_str = template.read()
     
-    # replace placeholders with content
-    html_str = html_str.replace("[[STYLESHEET]]", stylesheet_from_tag)
-    html_str = html_str.replace("[[FAVICON]]", favicon_from_tag)
-    html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
-    html_str = html_str.replace("[[YEAR]]", str(now.year))
-    html_str = html_str.replace("[[DISPLAY]]", display_tag(tag))
-    
-    # generate and sub in the list of results
-    results_str = ""
-    
+    # open xml file containing all tagged posts
     xml_filename = home_dir_local + "/tags/" + tag + ".xml"
     tree = ET.parse(xml_filename)
     info = tree.getroot()
     
+    # make a list of filenames with this tag, flip to reverse chron
+    results = []
     for child in info:
-        post = Post()
-        post.populate_from_xml(xml_path(child.text))
+        results += [child.text]
+    results = results[::-1]
+    
+    # prepare for multiple pages of results
+    page_no = 0
+    
+    while len(results) > 0:
         
-        results_str += post.preview_block()
-    
-    html_str = html_str.replace("[[RESULTS]]", results_str)
-    
-    # write to file
-    html = open(html_filename, "w+")
-    html.write(html_str)
+        html_str = template_str
+        slots_left_on_page = 3
+        
+        # replace placeholders with content
+        html_str = html_str.replace("[[STYLESHEET]]", stylesheet_from_tag)
+        html_str = html_str.replace("[[FAVICON]]", favicon_from_tag)
+        html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
+        html_str = html_str.replace("[[YEAR]]", str(now.year))
+        html_str = html_str.replace("[[DISPLAY]]", display_tag(tag))
+        
+        ### generate and sub in the list of results
+        
+        results_str = ""
+        
+        # add result previews to this page until we run out of slots or results
+        while slots_left_on_page > 0 and len(results) > 0:
+            post = Post()
+            post.populate_from_xml(xml_path(results[0]))
+            results_str += post.preview_block()
+            
+            slots_left_on_page -= 1
+            results = results[1:]
+        
+        # sub in these results
+        html_str = html_str.replace("[[RESULTS]]", results_str)
+        
+        # add a next button if there are more results
+        if len(results) > 0:
+            next_button = open(home_dir_local + template_next_page).read()
+            link = home_dir_online + "/tags/" + tag + "_" + str(page_no + 1) + ".html"
+            html_str = html_str.replace("[[NEXT]]", next_button)
+            html_str = html_str.replace("[[LINK]]", link)
+        else:
+            html_str = html_str.replace("[[NEXT]]", "")
+        
+        # write to file
+        html_filename = home_dir_local + "/tags/" + tag + (("_" + str(page_no)) if page_no > 0 else "") + ".html"
+        rm_if_exists(html_filename)
+        html = open(html_filename, "w+")
+        html.write(html_str)
+        
+        # add a new page if there are results remaining
+        page_no += 1
     
 
 

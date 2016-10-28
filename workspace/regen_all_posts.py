@@ -57,6 +57,8 @@ def main():
     for child in info:
         update_tag_page(child.attrib["internal"])
     
+    update_tag_page("all")
+    
     
 
 if __name__ == '__main__':

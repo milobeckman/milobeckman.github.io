@@ -92,11 +92,17 @@ body {
     text-align: right;
 }
 
+.content_next {
+    font-weight: bold;
+    text-align: right;
+    padding: var(--padding) calc(2*var(--padding)) 0px 0px;
+}
+
 .copyright {
     font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
     font-size: 10px;
     color: var(--copyright-text-col);
-    padding: 3px 0px 0px calc(var(--padding) + 5px);
+    padding: 3px 0px var(--padding) calc(var(--padding) + 5px);
 }
 
 /* link formatting */
@@ -104,6 +110,8 @@ body {
 .content_main a:link,
 .content_continue a,
 .content_continue a:link,
+.content_next a,
+.content_next a:link,
 .content_undertitle a,
 .content_undertitle a:link {
     color: var(--link-col);
@@ -112,12 +120,14 @@ body {
 
 .content_main a:hover,
 .content_continue a:hover,
+.content_next a:hover,
 .content_undertitle a:hover {
     text-decoration: underline;
 }
 
 .content_main a:visited,
 .content_continue a:visited,
+.content_next a:visited,
 .content_undertitle a:visited {
     color: var(--clicked-link-col);
 }

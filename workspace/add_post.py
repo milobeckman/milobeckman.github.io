@@ -44,6 +44,8 @@ def main():
     
     # add reference to this post in appropriate tag/all xmls
     post.add_to_list("all")
+    update_tag_page("all")
+    
     for tag in post.tags:
         post.add_to_list(tag)
         update_tag_page(tag)
