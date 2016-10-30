@@ -2,6 +2,8 @@
 
 <p>Mauris ac maximus ex. Praesent ultrices, ex eu viverra facilisis, dolor libero pretium turpis, in scelerisque ipsum quam ac diam. Integer malesuada pulvinar orci sit amet vestibulum. Nullam dapibus facilisis sapien vitae lobortis. Morbi nec interdum ante. Fusce aliquet quam vitae vulputate ultrices. Morbi at purus felis. Sed ac dapibus nunc.</p>
 
+[[FOLD]]
+
 <p>Sed a quam vel elit rhoncus tincidunt ut non elit. Nam ullamcorper dui vel enim tempor lobortis. Nunc porttitor tempor vulputate. Quisque gravida, arcu ut porttitor consequat, sapien erat ultricies sem, sed iaculis mauris ligula pulvinar dui. In hac habitasse platea dictumst. Quisque dignissim vel nisi ac auctor. Nulla dapibus luctus maximus.</p>
 
 <p>Morbi et leo ullamcorper, rutrum nisl at, ultricies diam. Nullam suscipit urna id orci sagittis finibus. Sed sem augue, vehicula eget volutpat at, molestie quis lacus. Suspendisse maximus eros nec dui hendrerit rhoncus. In fringilla facilisis nibh, eget maximus diam eleifend ac. Fusce non iaculis magna. Suspendisse luctus, mauris at faucibus convallis, arcu enim rutrum felis, at ultrices lorem tellus vitae eros. Donec et porttitor tellus, ut faucibus lacus. Fusce luctus est est. Etiam fringilla dolor id pharetra placerat. Phasellus tincidunt laoreet libero. Aenean convallis augue sit amet lectus ornare faucibus. Fusce id pellentesque sapien. Nunc sit amet gravida nibh.</p>

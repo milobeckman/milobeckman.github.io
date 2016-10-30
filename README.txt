@@ -63,6 +63,12 @@ To add a new post:
      The post is now live on milobeckman.com.
 
 
+To do a hard reset:
+
+ (1) Delete everything from content directories (save whatever txt files).
+
+ (2) Reset 
+
 
 
 

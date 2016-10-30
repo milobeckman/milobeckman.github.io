@@ -26,6 +26,7 @@ template_tag = "/style/tag.html"
 template_tag_slice = "/style/tag_slice.html"
 template_next_page = "/style/next_page.html"
 template_end_of_results = "/style/end_of_results.html"
+template_continue_reading = "/style/continue_reading.html"
 
 
 class Post:
@@ -149,6 +150,7 @@ class Post:
         html_str = html_str.replace("[[STYLESHEET]]", stylesheet)
         html_str = html_str.replace("[[FAVICON]]", favicon)
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
+        html_str = html_str.replace("[[FOLD]]", "")
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
         html_str = html_str.replace("[[PERMALINK]]", permalink)
@@ -229,9 +231,12 @@ class Post:
         template = open(template_filename, "r")
         html_str = template.read()
         
-        # insert text
+        # insert text, replacing everything "under the fold" with a "continue reading" button
         txt = open(self.content_dir_local + "/" + self.filename + ".txt", "r")
-        text = txt.read()
+        text = txt.read()        
+        if "[[FOLD]]" in text:
+            i = text.find("[[FOLD]]")
+            text = text[:i] + open(home_dir_local + template_continue_reading).read()
         html_str = html_str.replace("[[TEXT]]", text)
         
         # replace placeholders with content
