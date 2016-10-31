@@ -12,15 +12,19 @@ body {
     
     /* colors */
     --background-col: rgb(250,250,250);
-    --border-col: rgb(160,210,244);
     --banner-background-col: rgb(249, 252, 255);
+    
+    --border-col: rgb(160,210,244);
+    
     --banner-text-col: rgb(160,210,244);
     --banner-text-hover-col: rgb(165,215,249);
     --copyright-text-col: rgb(180,180,180);
+    --quote-text-col: rgb(150,150,150);
+    
     --link-col: rgb(51,102,187);
     --clicked-link-col: rgb(51,102,187);
     
-    background-color: var(--light-gray);
+    background-color: var(--background-col);
 }
 
 .banner {
@@ -100,12 +104,47 @@ body {
     padding: var(--padding) calc(2*var(--padding)) 0px 0px;
 }
 
+.quote {
+    padding: 0px 0px 0px var(--padding);
+    color: var(--quote-text-col);
+    border-left: solid;
+    border-color: var(--border-col);
+    border-width: 3px;
+}
+
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 1.4em;
+}
+
+li {
+    padding-bottom: 2px;
+    padding-top: 2px;
+}
+
+ul li {
+    padding-left: 27px;
+    text-indent: -27px;
+}
+
+ol li {
+    padding-left: 0.5em;
+}
+
+ul li:before {
+  content: "\2192 \0020";
+  padding-right: 10px;
+}
+
 .copyright {
     font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
     font-size: 10px;
     color: var(--copyright-text-col);
     padding: 3px 0px var(--padding) calc(var(--padding) + 5px);
 }
+
+
 
 /* link formatting */
 .content_main a,

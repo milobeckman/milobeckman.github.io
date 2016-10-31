@@ -350,7 +350,6 @@ def update_tag_page(tag):
             link = home_dir_online + "/tags/" + tag + "_" + str(page_no + 1) + ".html"
             next_page = next_page.replace("[[LINK]]", link)
         else:
-            print "END"
             next_page = open(home_dir_local + template_end_of_results).read()
         html_str = html_str.replace("[[NEXT]]", next_page)
         
