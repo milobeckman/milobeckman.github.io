@@ -1,0 +1,12 @@
+<p>I have occasionally edited and written articles on <a href="http://en.wikipedia.org">Wikipedia</a>, mostly about math concepts or card games. Here are some that I wrote from scratch.</p>
+
+<ul>
+<li>Jan 2012 — <a href="https://en.wikipedia.org/wiki/GKIDS">GKIDS</a></li>
+<li>Jul 2009 — <a href="https://en.wikipedia.org/wiki/Diplomat_(card_game)">Diplomat (card game)</a></li>
+<li>Jun 2009 — <a href="https://en.wikipedia.org/wiki/Mass_point_geometry">Mass point geometry</a></li>
+<li>Jun 2009 — <a href="https://en.wikipedia.org/wiki/Vieta_jumping">Vieta jumping</a></li>
+<li>May 2009 — <a href="https://en.wikipedia.org/wiki/Commune_(card_game)">Commune (card game)</a></li>
+<li>May 2009 — <a href="https://en.wikipedia.org/wiki/Twenty-Five_(solitaire)">Twenty-Five (solitaire)</a></li>
+</ul>
+
+<p>I also created the page <a href="https://en.wikipedia.org/wiki/Filibuster_in_the_United_States_Senate">Filibuster in the United States Senate</a>, but all content was taken from existing pages.</p>
