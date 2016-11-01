@@ -1,0 +1,7 @@
+<p>I sometimes <a href="https://medium.com/@milobela">write essays</a> on <a href="http://www.medium.com">Medium</a>.</p>
+
+<ul>
+<li>Oct 2016 — <a href="https://medium.com/@milobela/the-leftist-case-for-clinton-c5de3dfd8a67#.vhex3waju">The Leftist Case for Clinton</a></li>
+<li>Oct 2016 — <a href="https://medium.com/@milobela/institutional-inertia-in-the-birther-era-341c41179c2a">Institutional Inertia in the Birther Era</a></li>
+<li>Mar 2014 — <a href="https://medium.com/@milobela/every-house-is-the-best-house-9c994c0d531e">A statistical comparison of Harvard houses</a></li>
+</ul>
