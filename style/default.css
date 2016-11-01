@@ -7,7 +7,7 @@ body {
     font-family: "Avenir";
     
     --banner-height: 80px;
-    --sidebar-width: 170px;
+    --sidebar-width: 200px;
     --padding: 20px;
     
     /* colors */
@@ -49,6 +49,10 @@ body {
     align-items: stretch;
     width: var(--sidebar-width);
     min-height: calc(100vh - var(--banner-height));
+    /*padding: var(--padding);*/
+    
+    font-weight: bold;
+    font-size: 15px;
 }
 
 
@@ -175,12 +179,15 @@ ul li:before {
 }
 
 .content_title a,
-.content_title a:link {
+.content_title a:link,
+.sidebar a,
+.sidebar a:link {
     color: black;
     text-decoration: none;
 }
 
-.content_title a:hover {
+.content_title a:hover,
+.sidebar a:hover {
     text-decoration: underline;
 }
 
