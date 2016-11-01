@@ -27,6 +27,7 @@ template_tag_slice = "/style/tag_slice.html"
 template_next_page = "/style/next_page.html"
 template_end_of_results = "/style/end_of_results.html"
 template_continue_reading = "/style/continue_reading.html"
+template_sidebar = "/style/sidebar.html"
 
 
 class Post:
@@ -151,6 +152,7 @@ class Post:
         html_str = html_str.replace("[[FAVICON]]", favicon)
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         html_str = html_str.replace("[[FOLD]]", "")
+        html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
         html_str = html_str.replace("[[PERMALINK]]", permalink)
@@ -327,6 +329,7 @@ def update_tag_page(tag):
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         html_str = html_str.replace("[[YEAR]]", str(now.year))
         html_str = html_str.replace("[[DISPLAY]]", display_tag(tag))
+        html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         
         ### generate and sub in the list of results
         
