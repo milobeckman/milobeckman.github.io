@@ -319,7 +319,7 @@ def update_tag_page(tag):
     while len(results) > 0:
         
         html_str = template_str
-        slots_left_on_page = 3
+        slots_left_on_page = 10
         
         # replace placeholders with content
         html_str = html_str.replace("[[STYLESHEET]]", stylesheet_from_tag)

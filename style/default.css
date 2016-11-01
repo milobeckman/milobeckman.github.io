@@ -95,13 +95,14 @@ body {
     font-family: "Avenir";
     font-weight: bold;
     text-align: right;
+    padding-bottom: var(--padding);
 }
 
 .content_next {
     font-weight: bold;
     text-align: right;
     color: var(--copyright-text-col);
-    padding: var(--padding) calc(2*var(--padding)) 0px 0px;
+    padding: var(--padding) calc(2*var(--padding)) var(--padding) 0px;
 }
 
 .quote {
