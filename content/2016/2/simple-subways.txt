@@ -7,7 +7,13 @@
 <p class="b1" style="text-align:center">1.  Manhattan is pretty much a rectangle.</p>
 </th><th>
 <img src="[[ASSET]]simple-subways-1.png" style="width:100%">
-</th></tr><tr><th>
+</th></tr>
+</table>
+[[FOLD]]
+<table style="width:100%">
+<col width="50%">
+<col width="50%">
+<tr><th>
 <img src="[[ASSET]]simple-subways-2.png" style="width:100%">
 </th><th>
 <p class="b1" style="text-align:center">2.  Most trains run up and down the island.</p>
