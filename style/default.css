@@ -116,6 +116,7 @@ body {
     font-weight: bold;
     font-size: 16px;
     text-align: right;
+    margin-top: var(--padding);
 }
 
 .content_next {
