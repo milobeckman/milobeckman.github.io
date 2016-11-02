@@ -120,6 +120,12 @@ body {
     padding: var(--padding) calc(2*var(--padding)) var(--padding) 0px;
 }
 
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .quote {
     padding: 0px 0px 0px var(--padding);
     color: var(--quote-text-col);

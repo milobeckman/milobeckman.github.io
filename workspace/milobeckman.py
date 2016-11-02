@@ -128,11 +128,13 @@ class Post:
             txt_filename = self.filename + ".txt"
             stylesheet = stylesheet_from_preview
             favicon = favicon_from_preview
+            asset_path = home_dir_local + "/" + self.year + "/" + self.month + "/"
         else:
             html_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".html"
             txt_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
             stylesheet = stylesheet_from_live
             favicon = favicon_from_live
+            asset_path = home_dir_online + "/" + self.year + "/" + self.month + "/"
         
         # open a new html file for writing
         html = open(html_filename, "w+")
@@ -147,7 +149,7 @@ class Post:
         text = txt.read()
         html_str = html_str.replace("[[TEXT]]", text)
         
-        # replace placeholders with content
+        # insert basic page information
         html_str = html_str.replace("[[STYLESHEET]]", stylesheet)
         html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         html_str = html_str.replace("[[FAVICON]]", favicon)
@@ -156,15 +158,19 @@ class Post:
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
         html_str = html_str.replace("[[PERMALINK]]", permalink)
-        
         html_str = html_str.replace("[[TITLE]]", self.title)
         html_str = html_str.replace("[[DATESTRING]]", self.datestring)
+        
         html_str = html_str.replace("[[YEAR]]", self.year)
         
         tags = ""
         for tag in self.tags:
             tags += "<a href=" + home_dir_online + "/tags/" + tag + ".html>" + display_tag(tag) + "</a>, "
         html_str = html_str.replace("[[TAGS]]", tags[:-2])
+        
+        # point any asset references to the correct dir
+        asset_path = home_dir_online + "/" + self.year + "/" + self.month + "/"
+        html_str = html_str.replace("[[ASSET]]", asset_path)
         
         # write to html file
         html.write(html_str)
@@ -241,17 +247,21 @@ class Post:
             text = text[:i] + open(home_dir_local + template_continue_reading).read()
         html_str = html_str.replace("[[TEXT]]", text)
         
-        # replace placeholders with content
+        # insert the permalink, title, datestring
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
         html_str = html_str.replace("[[PERMALINK]]", permalink)
-        
         html_str = html_str.replace("[[TITLE]]", self.title)
         html_str = html_str.replace("[[DATESTRING]]", self.datestring)
         
+        # insert the display tag strings
         tags = ""
         for tag in self.tags:
             tags += "<a href=" + home_dir_online + "/tags/" + tag + ".html>" + display_tag(tag) + "</a>, "
         html_str = html_str.replace("[[TAGS]]", tags[:-2])
+        
+        # point any asset references to the correct dir
+        asset_path = home_dir_online + "/" + self.year + "/" + self.month + "/"
+        html_str = html_str.replace("[[ASSET]]", asset_path)
         
         # return the html string
         return html_str
