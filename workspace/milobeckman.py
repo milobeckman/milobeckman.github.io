@@ -128,13 +128,13 @@ class Post:
             txt_filename = self.filename + ".txt"
             stylesheet = stylesheet_from_preview
             favicon = favicon_from_preview
-            asset_path = home_dir_local + "/" + self.year + "/" + self.month + "/"
+            asset_path = home_dir_local + "/content/" + self.year + "/" + self.month + "/"
         else:
             html_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".html"
             txt_filename = home_dir_local + self.content_dir_rel + "/" + self.filename + ".txt"
             stylesheet = stylesheet_from_live
             favicon = favicon_from_live
-            asset_path = home_dir_online + "/" + self.year + "/" + self.month + "/"
+            asset_path = home_dir_online + "/content/" + self.year + "/" + self.month + "/"
         
         # open a new html file for writing
         html = open(html_filename, "w+")
@@ -169,7 +169,6 @@ class Post:
         html_str = html_str.replace("[[TAGS]]", tags[:-2])
         
         # point any asset references to the correct dir
-        asset_path = home_dir_online + "/" + self.year + "/" + self.month + "/"
         html_str = html_str.replace("[[ASSET]]", asset_path)
         
         # write to html file
@@ -260,7 +259,7 @@ class Post:
         html_str = html_str.replace("[[TAGS]]", tags[:-2])
         
         # point any asset references to the correct dir
-        asset_path = home_dir_online + "/" + self.year + "/" + self.month + "/"
+        asset_path = home_dir_online + "/content/" + self.year + "/" + self.month + "/"
         html_str = html_str.replace("[[ASSET]]", asset_path)
         
         # return the html string
