@@ -149,10 +149,10 @@ class Post:
         
         # replace placeholders with content
         html_str = html_str.replace("[[STYLESHEET]]", stylesheet)
+        html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         html_str = html_str.replace("[[FAVICON]]", favicon)
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         html_str = html_str.replace("[[FOLD]]", "")
-        html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
         html_str = html_str.replace("[[PERMALINK]]", permalink)
@@ -325,11 +325,11 @@ def update_tag_page(tag):
         
         # replace placeholders with content
         html_str = html_str.replace("[[STYLESHEET]]", stylesheet_from_tag)
+        html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         html_str = html_str.replace("[[FAVICON]]", favicon_from_tag)
         html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         html_str = html_str.replace("[[YEAR]]", str(now.year))
         html_str = html_str.replace("[[DISPLAY]]", display_tag(tag))
-        html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         
         ### generate and sub in the list of results
         

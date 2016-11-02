@@ -51,10 +51,19 @@ body {
     min-height: calc(100vh - var(--banner-height));
     /*padding: var(--padding);*/
     
-    color: var(--banner-text-col);
+    color: black;
     
     font-weight: bold;
     font-size: 15px;
+}
+
+.sidebar ul {
+    color: var(--banner-text-col);
+    margin-top: -10px;
+}
+
+.sidebar p {
+    padding-left: var(--padding);
 }
 
 
