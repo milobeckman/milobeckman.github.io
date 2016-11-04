@@ -173,21 +173,7 @@ ul li:before {
     padding: 3px 0px var(--padding) calc(var(--padding) + 5px);
 }
 
-.square {
-    width: 33.3%;
-    height: 0;
-    
-    border: 4px solid var(--banner-text-col);
-    border-radius: 5px;
-}
 
-.square:hover {
-    width: 33.3%;
-    height: 0;
-    
-    border: 4px solid var(--banner-text-hover-col);
-    border-radius: 5px;
-}
 
 
 
