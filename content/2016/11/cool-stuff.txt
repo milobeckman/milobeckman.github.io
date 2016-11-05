@@ -11,7 +11,8 @@
 <img src="[[ASSET]]cool-stuff-1.png" style="width:100%"></a>
 </th>
 <th class="square">
-
+<a target="_blank" href="[[HOMELINK]]/content/2016/2/simple-subways.html">
+<img src="[[ASSET]]cool-stuff-2.png" style="width:100%"></a>
 </th>
 </th>
 <th class="square">
