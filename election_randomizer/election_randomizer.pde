@@ -3,6 +3,9 @@
 // all values measured in HRC minus DJT //
 //////////////////////////////////////////
 
+import java.utils.*;
+import java.lang.*;
+
 float natl_stdev = 3.6;
 float northeast_stdev = 2;
 float midwest_stdev = 3;
