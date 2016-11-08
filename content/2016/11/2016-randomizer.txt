@@ -1,2 +1,2 @@
-<script src="[[ASSET]]processing-1.4.8.js"></script>
-<canvas data-processing-sources="[[ASSET]]election_randomizer.pde"></canvas>
+<script src="processing-1.4.8.js"></script>
+<canvas data-processing-sources="election_randomizer.pde"></canvas>
