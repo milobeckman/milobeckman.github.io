@@ -80,8 +80,6 @@ void gen_results() {
   for (int i = 0; i < states.length; i++)
     exps[i] = exps[i] + natl_error;
 
-  println("here");
-
   // adjust for state polling error
   float[] stdevs_array = {
     7.2, 6.8, 11.2, 10, 6.6, 6.0, 6.0, 9.9, 6.0, 10.3, 6.6, 9.5, 6.5, 7, 6.8, 8.4, 7.1, 6.6, 6.2, 6.4, 6.3, 6.3, 6.5, 7.7, 6.7, 6.0, 6.0, 11.6, 6.3, 6.9, 7.1, 13.3, 6.0, 6.0, 11.5, 6.0, 6.0, 6.7, 6.0, 6.3, 6.4, 6.3, 9.0, 5.7, 10.0, 13.0, 5.8, 6.4, 8.1, 7.2, 6.5, 10.3, 6.5, 8.0, 12.5, 11.8
@@ -195,10 +193,12 @@ void update_score_bar() {
   text(trump_score,933,265);
   
   // mcmullin bar
-  stroke(#FFCC00);
-  fill(#FFCC00);
-  float m_len = (float(mcmullin_score) / 538.0) * 918.0;
-  rect(938-t_len-m_len, 270, m_len, 30);
+  if (mcmullin_score > 0) {
+    stroke(#FFCC00);
+    fill(#FFCC00);
+    float m_len = (float(mcmullin_score) / 538.0) * 918.0;
+    rect(938-t_len-m_len, 270, m_len, 30);
+  }
   
   // goalpost
   PImage img = loadImage("goalpost.png");
@@ -236,9 +236,9 @@ void write_headlines() {
     else
       subh2 = "RIOTS BREAK OUT AS TRUMP CONCEDES RACE";
     
-    if (winner.get("UT") == 2)
+    if winner[37] == 2
       subh2 = "EVAN McMULLIN TAKES UTAH IN LATE SURGE";
-    if (winner.get("TX") == 0)
+    if winner[35] == 0
       subh2 = "RECORD HISPANIC TURNOUT PAINTS TEXAS BLUE";
     
   }
