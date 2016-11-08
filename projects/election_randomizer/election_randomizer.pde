@@ -161,7 +161,7 @@ void update_map() {
 
 void update_score_bar() {
   textFont(pts_font);
-  strokeWeight(3);
+  strokeWeight(0);
   
   // under bar
   stroke(#eeeeee);
