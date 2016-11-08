@@ -7,7 +7,7 @@ now = datetime.datetime.now()
 
 # filepath roots
 home_dir_local = "/users/milo/Desktop/Dropbox/Code/milobeckman"
-home_dir_online = "http://milobeckman.github.io"
+home_dir_online = "http://milobeckman.com"
 
 # filepaths referenced inside html code
 stylesheet_from_preview = "../style/default.css"
