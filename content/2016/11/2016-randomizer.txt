@@ -1,0 +1,4 @@
+<p>Based on <a href="http://projects.fivethirtyeight.com/2016-election-forecast/">FiveThirtyEight's projections</a>, the following tool lets you "roll the dice" and see one plausible result of today's election. Click anywhere to re-roll.</p>
+
+<script src="processing-1.4.8.js"></script>
+<canvas data-processing-sources="election_randomizer.pde"></canvas>
