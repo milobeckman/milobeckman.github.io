@@ -106,9 +106,17 @@ body {
     line-height: 1.5;
 }
 
+/* for medium-/vox-style section headers */
 .b1 {
     font-weight: bold;
     font-size: 16px;
+}
+
+/* for new yorker-style numbered headers */
+.b2 {
+    text-align: center;
+    font-size: 36px;
+    font-family: "Times New Roman", "Georgia", serif;
 }
 
 .content_continue {
