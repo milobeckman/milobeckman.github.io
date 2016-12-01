@@ -2,11 +2,9 @@
 
 <p>The answer: It doesn't matter. Whatever you choose, 60% of clicks will go to Hamilton, 30% to Trump University, 10% to Sessions.</p>
 
-[[FOLD]]
-
 <p>The problem is not a supply of fake news, it's a demand for fake news. If not the <a href="https://www.buzzfeed.com/craigsilverman/how-macedonia-became-a-global-hub-for-pro-trump-misinfo">100 Macedonian websites</a>, someone else would have called Clinton a criminal. The clicks were there. Someone just needed to provide the article.</p>
 
-<p>In other words, the market for information is freer than ever before, and its revealed preference is that we don't put much of a premium on truth.</p>
+<p>In other words, <mark>the market for information is freer than ever before, and its revealed preference is that we don't put much of a premium on truth.</mark></p>
 
 <p>If we agree this is problematic, we must either change norms or regulate the market for information. It would be an immense feat to ask 1.8 billion Facebook users to have intentionality about their every click. It seems reasonable to ask Facebook to play the role of regulator here.</p>
 
