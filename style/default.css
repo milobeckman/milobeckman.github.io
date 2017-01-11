@@ -40,6 +40,29 @@ body {
     border-bottom: 1px solid var(--border-col);
 }
 
+.banner-home {
+    background-color: var(--banner-background-col);
+    color: var(--banner-text-col);
+    font-weight: bold;
+    font-size: 40px;
+    
+    height: var(--banner-height);
+    line-height: var(--banner-height);
+    text-align: center;
+    
+    border-bottom: 1px solid var(--border-col);
+}
+
+.subbanner-home {
+    color: var(--sidebar-text-col);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    padding-top: 12px;
+    padding-bottom: 9px;
+}
+
 .main {
     background-color: var(--background-col);
     display: flex;
@@ -186,6 +209,7 @@ ul li:before {
     height: 0;
     
     border: 4px solid var(--banner-text-col);
+    background-color: white;
     border-radius: 5px;
 }
 
@@ -233,7 +257,9 @@ ul li:before {
 }
 
 .sidebar a,
-.sidebar a:link {
+.sidebar a:link,
+.subbanner-home a,
+.subbanner-home a:link {
     color: var(--banner-text-col);
     text-decoration: none;
 }
@@ -245,13 +271,18 @@ ul li:before {
 
 .banner a,
 .banner a:link,
-.banner a:visited {
+.banner a:visited,
+.banner-home a,
+.banner-home a:link,
+.banner-home a:visited {
     color: var(--banner-text-col);
     text-decoration: none;
 }
 
 .banner a:hover,
-.sidebar a:hover {
+.banner-home a:hover,
+.sidebar a:hover,
+.subbanner-home a:hover {
     color: var(--banner-text-hover-col);
     text-decoration: none;
 }
