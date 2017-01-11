@@ -153,7 +153,7 @@ class Post:
         html_str = html_str.replace("[[STYLESHEET]]", stylesheet)
         html_str = html_str.replace("[[SIDEBAR]]", open(home_dir_local + template_sidebar,"r").read())
         html_str = html_str.replace("[[FAVICON]]", favicon)
-        html_str = html_str.replace("[[HOMELINK]]", home_dir_online + "/tags/all.html")
+        html_str = html_str.replace("[[HOMELINK]]", home_dir_online)
         html_str = html_str.replace("[[FOLD]]", "")
         
         permalink = home_dir_online + self.content_dir_rel + "/" + self.filename + ".html"
