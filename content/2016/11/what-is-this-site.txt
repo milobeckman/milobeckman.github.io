@@ -1,5 +1,7 @@
-<p>milobeckman.com is somewhere between a blog, content aggregator, and professional website. As of November 2016, it's mostly just a collection of my various projects and writings that are scattered around the internet, but I intend to update it regularly with links to/discussion of articles, papers, and other things I find interesting. It is most closely modeled off of <a href="http://www.marginalrevolution.com/">Marginal Revolution</a>. If you come across something interesting, please send it to me at milobeckman [at] gmail [dot] com!</p>
+<p>milobeckman.com is (as of June 2017) an attempt to collect all of my various projects into one place. The home page is a somewhat chronological summary of my academic career so far. This site also has some blog posts, but I realized I don't like blogging, so it's not a blog anymore.</p>
 
-<p>I programmed this site and its content management system from scratch (mostly in Python) and hosted it on GitHub Pages. The full source code is available <a href="https://github.com/milobeckman/milobeckman.github.io/tree/master/workspace">here</a>, the bulk of it in milobeckman.py. I intend to keep adding to it as I learn more HTML/Javascript, so you may eventually be able to comment or sign up for email updates.</p>
+<p>Feel free to email me or send me something interesting, at milobeckman [at] gmail [dot] com!</p>
+
+<p>I programmed this site and its content management system from scratch (mostly in Python) and hosted it on GitHub Pages. The full source code is available <a href="https://github.com/milobeckman/milobeckman.github.io/tree/master/workspace">here</a>, the bulk of it in milobeckman.py. I intend to keep adding to it as I learn more HTML/Javascript.</p>
 
 <p>Click on some links in the sidebar to get started.</p>
