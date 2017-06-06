@@ -38,7 +38,7 @@ To add a new post:
 
  (2) From /workspace, run:
 
-	python preview_post.py "my_post.txt" "My post's title" "tag1,tag2"
+	python preview_post.py "my_post" "My post's title" "tag1,tag2"
 
      This stores info about this post in /workspace/my_post.xml and creates an
      html preview at /workspace/my_post.html.
@@ -48,7 +48,7 @@ To add a new post:
 
  (4) Still in /workspace, run:
 
-	python add_post.py "my_post.txt"
+	python add_post.py "my_post"
 
      This uses the info in /workspace/my_post.xml to create a web-ready version.
      It then moves my_post.txt, my_post.xml, and my_post.html to the appropriate
@@ -61,6 +61,16 @@ To add a new post:
 	git push origin master
 
      The post is now live on milobeckman.com.
+
+
+To include images/media:
+
+ (1) Move the media into a directory in the appropriate content folder, e.g.
+     /content/2017/6/SupermarketTheorem/SupermarketTheorem-01.png.
+
+ (2) In the desired location in the my_post.txt file, write:
+
+	<img src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-01.png">
 
 
 To do a hard reset:

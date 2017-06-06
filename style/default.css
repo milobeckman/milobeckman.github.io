@@ -63,6 +63,24 @@ body {
     padding-bottom: 9px;
 }
 
+.section-home {
+    color: var(--copyright-text-col);
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: center;
+    border-top: 1px solid;
+    border-color: var(--banner-text-col);
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10px;
+}
+
+.section-home p {
+    padding: 0px;
+    margin: 0px;
+}
+
 .main {
     background-color: var(--background-col);
     display: flex;
@@ -172,6 +190,12 @@ img {
     border-width: 3px;
 }
 
+.pdf {
+    border: 1px solid var(--copyright-text-col);
+    width: 850px;
+    margin-bottom: 5px;
+}
+
 ul {
     list-style: none;
     margin-left: 0;
@@ -259,7 +283,9 @@ ul li:before {
 .sidebar a,
 .sidebar a:link,
 .subbanner-home a,
-.subbanner-home a:link {
+.subbanner-home a:link,
+.section-home a,
+.section-home a:link {
     color: var(--banner-text-col);
     text-decoration: none;
 }
@@ -282,7 +308,8 @@ ul li:before {
 .banner a:hover,
 .banner-home a:hover,
 .sidebar a:hover,
-.subbanner-home a:hover {
+.subbanner-home a:hover,
+.section-home a:hover {
     color: var(--banner-text-hover-col);
     text-decoration: none;
 }

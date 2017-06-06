@@ -1,0 +1,25 @@
+<p>Below is a math research paper I wrote in 2010 for the <a href=https://student.societyforscience.org/regeneron-sts>Intel (now Regeneron) Science Talent Search</a>. The paper poses and (somewhat) answers a novel problem in geometry similar to the <a href=https://en.wikipedia.org/wiki/Watchman_route_problem>Watchman route problem</a>. The paper was a semi-finalist. Read it here:</p>
+
+[[FOLD]]
+
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-01.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-02.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-03.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-04.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-05.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-06.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-07.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-08.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-09.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-10.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-11.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-12.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-13.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-14.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-15.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-16.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-17.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-18.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-19.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-20.png">
+<img class="pdf" src="[[ASSET]]SupermarketTheorem/SupermarketTheorem-21.png">
