@@ -1,0 +1,7 @@
+<p>Here are my 100 most-played tracks (most-played at the top) according to Spotify, which says I listened to about an hour of music per day in 2017. This list excludes SoundCloud, so it probably undercounts <a href="https://soundcloud.com/zulupapuwa/sets/heavn-jamila-woods">this album</a> and <a href="https://soundcloud.com/baddaydre/add">this song</a>, which were the main things I listened to on SoundCloud.</p>
+
+<p>My favorite albums this year in no particular order were <a href="https://open.spotify.com/album/59Bbr32pMTFHlUb8Nv1Kr0">Fin</a> by Syd, <a href="https://open.spotify.com/album/0XnqQzdSFAml08XZoRt1St">SATURATION II</a> by BROCKHAMPTON, and <a href="https://open.spotify.com/album/4eLPsYPBmXABThSJ821sqY">DAMN.</a> by Kendrick. I also was shown for the first time <a href="https://open.spotify.com/album/4H732ay6gyFrsqUeyWrZl9">Arular</a> by MIA and <a href="https://open.spotify.com/album/3cADvHRdKniF9ELCn1zbGH">Mama's Gun</a> by Erykah Badu, which were in a different sense my favorite albums of 2017.</p>
+
+[[FOLD]]
+
+<iframe src="https://open.spotify.com/embed/user/1210746148/playlist/1pQfTQyOcz9zCmTcOeyybB" width="300" height="380" frameborder="0" allowtransparency="true"></iframe>
