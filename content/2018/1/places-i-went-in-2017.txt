@@ -1,0 +1,69 @@
+<p>I did a bunch of traveling in 2017, here's a list of cities I slept in for at least one night, plus a photo I took in each place (except some places where I didn't take any).</p>
+
+<ul>
+<li>New York, NY</li>
+
+[[FOLD]]
+
+<img src="[[ASSET]]2017-places/01-newyork.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Washington, DC</li>
+<img src="[[ASSET]]2017-places/02-dc.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Cape Coral, FL</li>
+<img src="[[ASSET]]2017-places/03-capecoral.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Singapore</li>
+<img src="[[ASSET]]2017-places/04-singapore.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Zhengzhou, Henan, China</li>
+<img src="[[ASSET]]2017-places/05-zhengzhou.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Philadelphia, PA</li>
+<img src="[[ASSET]]2017-places/06-philly.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Boston, MA</li>
+<li>Chapel Hill, NC</li>
+<li>Asheville, NC</li>
+<img src="[[ASSET]]2017-places/09-asheville.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Cincinnati, OH</li>
+<li>Rothbury, MI</li>
+<img src="[[ASSET]]2017-places/11-rothbury.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Syracuse, NY</li>
+<li>Frankfurt, Hesse, Germany</li>
+<img src="[[ASSET]]2017-places/13-frankfurt.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Palma, Majorca, Spain</li>
+<img src="[[ASSET]]2017-places/14-palma.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Bologna, Emilia-Romagna, Italy</li>
+<img src="[[ASSET]]2017-places/15-bologna.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Sofia, Bulgaria</li>
+<img src="[[ASSET]]2017-places/16-sofia.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Berlin, Germany</li>
+<img src="[[ASSET]]2017-places/17-berlin.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Hong Kong</li>
+<img src="[[ASSET]]2017-places/18-hongkong.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Shanghai, China</li>
+<img src="[[ASSET]]2017-places/19-shanghai.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Burlington, VT</li>
+<img src="[[ASSET]]2017-places/20-burlington.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Cape May, NJ</li>
+<li>Vancouver, BC, Canada</li>
+<img src="[[ASSET]]2017-places/22-vancouver.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Guadalajara, Jalisco, Mexico</li>
+<img src="[[ASSET]]2017-places/23-Guadalajara.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+<li>Acapulco, Guerrero, Mexico</li>
+<img src="[[ASSET]]2017-places/24-Acapulco.JPG" style="width:40%; float:left; margin:0px 0px 10px 20px; border:1px solid">
+<br style="clear:both" />
+</ul>
