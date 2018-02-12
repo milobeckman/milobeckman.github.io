@@ -24,6 +24,8 @@ body {
     --link-col: rgb(51,102,187);
     --clicked-link-col: rgb(51,102,187);
     
+    --darker-blue: #24598f;
+    
     background-color: var(--background-col);
 }
 
@@ -238,11 +240,29 @@ ul li:before {
 }
 
 .square:hover {
-    width: 33.3%;
-    height: 0;
     
     border: 4px solid var(--banner-text-hover-col);
     border-radius: 5px;
+}
+
+
+.year-table {
+    width:75%;
+    margin-left:auto;
+    margin-right:auto;
+    background-color: var(--banner-background-col);
+    border: 1px solid var(--border-col);
+}
+
+.square-free {
+    
+    padding: 7%
+}
+
+.square-free:hover {
+    
+    padding 7%;
+    background-color: rgb(252, 254, 255);
 }
 
 
