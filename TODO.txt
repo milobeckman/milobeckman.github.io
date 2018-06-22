@@ -1,0 +1,7 @@
+
+edit_post.py -- give a year, month, title, it brings it back to the workspace
+preview_edit.py
+publish_edit.py
+
+changes the date string to "updated 12:22pm on Jun 22, 2018"
+creates an archived old version "ARCHIVE-2018-06-name-of-post.html"
