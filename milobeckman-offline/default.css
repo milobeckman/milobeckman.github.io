@@ -23,7 +23,6 @@ body {
 
 .main {
     
-    width: 50%;
     height: 35%;
 	
     position: absolute;
@@ -66,29 +65,11 @@ img {
 
 
 @media screen and (max-width: 991px) {
-
-    background-color: black;
-    
-    --font-size-big: 32px;
-    --font-size-small: 14px;
-
+    body {
+        --font-size-big: 36px;
+        --font-size-small: 14px;
+    }
 }
-
-@media screen and (max-width: 767px) {
-/* start of medium tablet styles */
-
-}
-
-@media screen and (max-width: 479px) {
-    
-    background-color: black;
-    
-    --font-size-big: 32px;
-    --font-size-small: 14px;
-
-}
-
-
 
 
 
