@@ -65,6 +65,26 @@ img {
 }
 
 
+@media screen and (max-width: 991px) {
+/* start of large tablet styles */
+
+}
+
+@media screen and (max-width: 767px) {
+/* start of medium tablet styles */
+
+}
+
+@media screen and (max-width: 479px) {
+    
+    background-color: black;
+    
+    --font-size-big: 32px;
+    --font-size-small: 14px;
+
+}
+
+
 
 
 
