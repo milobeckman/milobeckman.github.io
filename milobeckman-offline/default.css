@@ -1,0 +1,96 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    
+    --background-color: rgb(0,15,30);
+    --text-color: rgb(256,256,256);
+    --hover-color: rgb(160,190,220);
+    
+    --font-size-big: 60px;
+    --font-size-small: 24px;
+    --padding: 30px;
+    
+    text-align: center;
+    font-family: "Avenir";
+    
+    color: var(--text-color);
+    background-color: var(--background-color);
+
+}
+
+.main {
+    
+    width: 50%;
+    height: 35%;
+	
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  	
+    margin: auto;
+    
+}
+
+
+.big-text {
+    
+    font-size: var(--font-size-big);
+    font-weight: bold;
+    
+    height: var(--font-size-big);
+    margin: 5px;
+}
+
+.small-text {
+    
+    font-size: var(--font-size-small);
+    font-weight: bold;
+    color: var(--hover-color);
+}
+
+.img-div {
+    
+    height: 20%;
+    margin: 10px;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+
+a:link, a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+    target: "_blank";
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
