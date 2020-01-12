@@ -1,3 +1,0 @@
-<p>Jackson Maslow and I developed a Chrome extension, <a href="https://chrome.google.com/webstore/detail/delayed-gratification/ifhndomfnbmggdgodaicfebeggdphlcn?hl=en">Delayed Gratification</a>. You give it a list of "bad websites" and it makes you wait 15 seconds before entering. It's a simple fix, but it's increased my productivity noticeably.</p>
-
-<p>Give it a try and let us know what you think, delayedgratificationapp@gmail.com.</p>

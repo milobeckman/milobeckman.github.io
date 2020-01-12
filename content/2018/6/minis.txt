@@ -1,7 +1,0 @@
-<p>I create "mini" and "midi" sized crossword puzzles for the <a href="https://itunes.apple.com/us/app/new-york-times-crossword/id307569751">New York Times crossword app</a>. They are available for download in the "Packs" section of the app, tho they do cost $3.99. Here are the packs I've made so far:</p>
-
-<ul>
-<li>2018 &mdash; <b>Music Midis</b> (20 puzzles)</li>
-<li>2017 &mdash; <b>Modern Minis 4</b> (30 puzzles)</li>
-<li>2017 &mdash; <b>Mini Mania 9</b> (30 puzzles)</li>
-</ul>

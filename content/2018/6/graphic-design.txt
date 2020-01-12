@@ -1,5 +1,0 @@
-<p>I sometimes do little graphic design things as needed for projects I or a friend am working on. This is an incomplete list because I've done a bad job of keeping track of these, but here are three recent things:</p>
-
-<a target="_blank" href="http://forestfund.co"><img src="[[ASSET]]forest-fund.png" style="width:400px">
-<a target="_blank" href="https://itunes.apple.com/app/id1372594090"><img src="[[ASSET]]werd-square.png" style="width:400px"></br>
-<a target="_blank" href="https://chrome.google.com/webstore/detail/delayed-gratification/ifhndomfnbmggdgodaicfebeggdphlcn?hl=de"><img src="[[ASSET]]dg.png" style="width:400px">
