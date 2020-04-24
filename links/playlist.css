@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    
+    --background-color: rgb(0,15,30);
+    --text-color: rgb(256,256,256);
+    --hover-color: rgb(160,190,220);
+    --header-height: 120px;
+    --footer-height: 40px;
+    --font-size-big: 60px;
+    --font-size-small: 20px;
+    --padding: 30px;
+    
+    text-align: center;
+    font-family: "Avenir";
+    
+    color: var(--text-color);
+    background-color: var(--background-color);
+    
+}
+
+.header {
+    height: var(--header-height);
+    line-height: var(--header-height);
+    
+    font-size: var(--font-size-big);
+    font-weight: bold;
+}
+
+.column {
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+    float: left;
+    padding: 10px;
+}
+
+.column.left, .column.right {
+    width: 25%;
+    line-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.column.left {
+    text-align: right;
+    padding-right: var(--padding);
+}
+
+.column.right {
+    text-align: left;
+    padding-left: var(--padding);
+}
+
+.column.middle {
+    width: 50%;
+    
+    font-size: var(--font-size-small);
+    font-weight: normal;
+}
+
+a:link, a:visited {
+    color: var(--text-color);
+    text-decoration: none;
+    target: "_blank";
+}
+
+a:hover {
+    color: var(--hover-color);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
