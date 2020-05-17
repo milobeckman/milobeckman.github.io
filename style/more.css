@@ -1,0 +1,216 @@
+/* LAYOUT FORMATTING */
+
+body {
+    margin: 0px;
+    padding: 0px;
+    
+    font-family: "Avenir";
+    
+    --banner-height: 80px;
+    --sidebar-width: 200px;
+    --padding: 20px;
+    
+    /* colors */
+    --background-col: rgb(250,250,250);
+    --banner-background-col: rgb(249, 252, 255);
+    
+    --border-col: rgb(160,210,244);
+    
+    --banner-text-col: rgb(160,210,244);
+    --banner-text-hover-col: rgb(170,220,254);
+    --copyright-text-col: rgb(180,180,180);
+    --quote-text-col: rgb(150,150,150);
+    
+    --link-col: rgb(51,102,187);
+    --clicked-link-col: rgb(51,102,187);
+    
+    --darker-blue: #24598f;
+    
+    background-color: var(--background-col);
+    
+    
+    
+    
+    --grid-width: min(100vw, 900px);
+    --border-width: 4px;
+    --padding: 10px;
+    --total-inter: calc(var(--border-width)*6 + var(--padding)*6);
+    
+    --square-width: calc((var(--grid-width) - var(--total-inter))/3);
+    --hover-text-height: calc(var(--square-width)/15);
+    --hover-text-smaller: calc(var(--square-width)/25);
+}
+
+
+.banner-home {
+    background-color: var(--banner-background-col);
+    color: var(--banner-text-col);
+    font-weight: bold;
+    font-size: 40px;
+    
+    height: var(--banner-height);
+    line-height: var(--banner-height);
+    text-align: center;
+    
+    border-bottom: 1px solid var(--border-col);
+}
+
+.main {
+    background-color: var(--background-col);
+    width: min(100vw, 900px);
+    margin: auto;
+}
+
+.grid {
+  
+}
+
+.grid-row {
+  
+}
+
+
+.square {
+    width: var(--square-width);
+    height: var(--square-width);
+    margin:10px;
+    float:left;
+    
+    border: 3px solid var(--banner-text-col);
+    border-radius: 4px;
+    
+}
+
+.img-wrap {
+  position: relative;
+  height: var(--square-width);
+  width: var(--square-width);
+  
+  /*
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  */
+}
+
+.img-overlay {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right:0;
+  
+  background: rgba(29, 106, 154, 0.3);
+  visibility: hidden;
+  opacity: 0;
+  
+  text-align: center;
+  padding-top: var(--hover-text-height);
+  font-size: var(--hover-text-smaller);
+  /*font-weight: bold;*/
+  color: #fff;
+
+  /* transition effect. not necessary */
+  transition: opacity .2s, visibility .2s; 
+}
+
+.square:hover {
+    
+    /*border: 4px solid var(--banner-text-hover-col);
+    border-radius: 5px;*/
+}
+
+.square:hover .img-overlay {
+    visibility: visible;
+    opacity: 1;
+}
+
+t1 {
+    font-weight: bold;
+    font-size: var(--hover-text-height);
+}
+
+t2 {
+    font-size: calc(var(--hover-text-smaller));
+}
+
+
+
+
+.copyright {
+    font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
+    font-size: 10px;
+    color: var(--copyright-text-col);
+    padding: 3px 0px var(--padding) calc(var(--padding) + 5px);
+}
+
+
+
+/* link formatting */
+.content_main a,
+.content_main a:link,
+.content_continue a,
+.content_continue a:link,
+.content_next a,
+.content_next a:link,
+.content_undertitle a,
+.content_undertitle a:link {
+    color: var(--link-col);
+    text-decoration: none;
+}
+
+.content_main a:hover,
+.content_continue a:hover,
+.content_next a:hover,
+.content_undertitle a:hover {
+    text-decoration: underline;
+}
+
+.content_main a:visited,
+.content_continue a:visited,
+.content_next a:visited,
+.content_undertitle a:visited {
+    color: var(--clicked-link-col);
+}
+
+.content_title a,
+.content_title a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.sidebar a,
+.sidebar a:link,
+.subbanner-home a,
+.subbanner-home a:link,
+.section-home a,
+.section-home a:link {
+    color: var(--banner-text-col);
+    text-decoration: none;
+}
+
+.content_title a:hover {
+    text-decoration: underline;
+}
+
+
+.banner a,
+.banner a:link,
+.banner a:visited,
+.banner-home a,
+.banner-home a:link,
+.banner-home a:visited {
+    color: var(--banner-text-col);
+    text-decoration: none;
+}
+
+.banner a:hover,
+.banner-home a:hover,
+.sidebar a:hover,
+.subbanner-home a:hover,
+.section-home a:hover {
+    color: var(--banner-text-hover-col);
+    text-decoration: none;
+}
