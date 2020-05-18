@@ -38,7 +38,7 @@ body {
     
     --square-width: calc((var(--grid-width) - var(--total-inter))/3);
     --hover-text-height: calc(var(--square-width)/15);
-    --hover-text-smaller: calc(var(--square-width)/25);
+    --hover-text-smaller: calc(var(--square-width)/22);
 }
 
 
@@ -62,10 +62,6 @@ body {
 }
 
 .grid {
-  
-}
-
-.grid-row {
   
 }
 
@@ -102,7 +98,7 @@ body {
   bottom: 0;
   right:0;
   
-  background: rgba(29, 106, 154, 0.3);
+  background: rgba(29, 106, 154, 0.4);
   visibility: hidden;
   opacity: 0;
   
@@ -140,6 +136,8 @@ t2 {
 
 
 .copyright {
+
+    text-align:center;
     font-family: "Helvetica Neue", "Helvetica", "Arimo", "Liberation Sans", "Lucida Grande", sans-serif;
     font-size: 10px;
     color: var(--copyright-text-col);

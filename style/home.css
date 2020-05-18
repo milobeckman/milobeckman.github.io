@@ -80,7 +80,7 @@ body {
 }
 
 .list {
-    width: 80%;
+    width: 85%;
     margin: auto;
     
     color: var(--list-color);
@@ -92,9 +92,14 @@ body {
 }
 
 .list-icon {
-    width: 15%;
-    height: 100%;
+    width: var(--list-item-height);
+    height: var(--list-item-height);
     float: left;
+}
+
+.list-icon img {
+    width: var(--list-item-height);
+    height: var(--list-item-height);
 }
 
 .list-text {
@@ -116,9 +121,8 @@ body {
 }
 
 .copyright {
-    padding-top: 40px;
+    padding: 30px;
     margin: auto;
-    margin-bottom:20px;
     height: calc(var(--list-item-height) * 0.35);
     font-size: calc(var(--list-item-height) * 0.18);
     color: var(--separator-color);
