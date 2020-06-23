@@ -7,6 +7,7 @@ body {
     
     --background-color: rgb(0,15,30);
     --text-color: rgb(256,256,256);
+    --blurber-color: rgb(180,180,200);
     --separator-color: rgb(90,105,120);
     --list-color: rgb(160,190,220);
     --hover-color: rgb(256,256,256);
@@ -17,7 +18,7 @@ body {
     --padding: 30px;
     
     text-align: center;
-    font-family: "Avenir";
+    font-family: "Avenir", "Roboto", "Helvetica", sans-serif;
     
     color: var(--text-color);
     background-color: var(--background-color);
@@ -68,6 +69,22 @@ body {
     margin-left: auto;
     margin-right: auto;
     
+}
+
+.about-the-book {
+    
+    width: 65%;
+    margin:auto;
+    margin-top:30px;
+    
+    font-size: calc(var(--header-height)*0.33);
+    
+}
+
+blurber {
+  /*margin-top: -1em;*/
+    font-size: calc(var(--header-height)*0.25);
+    color: var(--blurber-color);
 }
 
 .separator {
