@@ -73,17 +73,17 @@ body {
 
 .about-the-book {
     
-    width: 65%;
+    width: 85%;
     margin:auto;
     margin-top:30px;
     
-    font-size: calc(var(--header-height)*0.33);
+    font-size: calc(var(--header-height)*0.33*85/65);
     
 }
 
 blurber {
   /*margin-top: -1em;*/
-    font-size: calc(var(--header-height)*0.25);
+    font-size: calc(var(--header-height)*0.25*85/65);
     color: var(--blurber-color);
 }
 
