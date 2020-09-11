@@ -90,6 +90,7 @@ body {
 
 .text-left {
     font-size: calc(var(--header-height)*0.33*65/65);
+    padding: 10px;
     text-align:left;
 }
 
