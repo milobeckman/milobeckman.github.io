@@ -149,6 +149,7 @@ ul.expandable {
 .expandable li {
     padding-bottom: calc(2*var(--list-item-padding));
     color: white;
+    font-size: calc(var(--list-item-height) * 0.3);
 }
 
 
