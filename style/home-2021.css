@@ -84,7 +84,16 @@ body {
 }
 
 blurber {
-  /*margin-top: -1em;*/
+    /*padding-top: 0*/
+    font-size: calc(var(--header-height)*0.25*85/65);
+    color: var(--blurber-color);
+}
+
+press-header {
+    font-family: "Playfair Display"
+}
+
+press-subheader {
     font-size: calc(var(--header-height)*0.25*85/65);
     color: var(--blurber-color);
 }
