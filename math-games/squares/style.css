@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000220;
+}
+
+body, .user-input, .high-score {
+    font-family: 'Avenir Next', 'Gill Sans', sans-serif;
+}
+
+.back-button {
+    position: absolute;
+    font-size: 1.2rem;
+    top: 2rem;
+    left: 2rem;
+    color: white;
+    opacity: 0.8;
+    text-decoration: none;
+}
+
+.back-button:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.game-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    /*min-height: 100vh;*/
+    /*background-color: red;*/
+}
+
+.play-button {
+    position: absolute;
+    width: 15rem;
+    height: 15rem;
+    border-radius: 15rem;
+    color: white;
+    text-align: center;
+    line-height: 15rem;
+    font-size: 2rem;
+    background-color: hsla(179, 0%, 86%, 0.2);
+    background-image: url('../play-button.png');
+    background-size: 80% 80%;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.9;
+    z-index: 5;
+}
+
+.timer {
+    /*
+    position: absolute;
+    */
+    width:100%;
+    text-align: center;
+    top: 2rem;
+    font-size: 3rem;
+    color: white;
+}
+
+.big-number-container {
+    display:flex;
+    position:relative;
+    justify-content:center;
+    align-items: center;
+    width:100%;
+    text-align: center;
+    min-height: 20rem;
+    visibility: hidden;
+}
+
+.big-number {
+    font-size: 13rem;
+    font-family: "Songti SC", "PT Serif", serif;
+    color: white;
+}
+
+.high-score {
+    font-size: 1.5rem;
+    position: absolute;
+    color: white;
+    top: 18rem;
+    visibility: hidden;
+}
+
+.input-container {
+    position: relative;
+    padding: 1rem;
+    width: 500px;
+    max-width: 80%;
+    visibility: hidden;
+}
+
+.question {
+    text-align: center;
+    font-size: 36px;
+    color: white;
+}
+
+.user-input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid gray;
+    outline: none;
+    width: 100%;
+    height: 3rem;
+    margin: auto;
+    resize: none;
+    padding: 1rem;
+    font-size: 36px;
+    text-align: center;
+    color:gray;
+}
+
+.user-input:focus {
+    border-color: white;
+    color: white;
+}
+
+.replay-button {
+    position: absolute;
+    text-align: center;
+    width: 40%;
+    left: 30%;
+    height: 4rem;
+    top: 2rem;
+    line-height: 4rem;
+    font-size: 1.3rem;
+    background-color:  hsla(179, 0%, 86%, 0.2);
+    border-radius: 0.5rem;
+    color: white;
+    visibility: hidden;
+}
+
+.replay-button:hover, .play-button:hover {
+    background-color: hsla(179, 0%, 86%, 0.3);
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+input[type='number'] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
